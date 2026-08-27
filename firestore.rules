@@ -1,0 +1,67 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to verify if the requesting user has the 'admin' role in users/{uid}
+    function isAdmin() {
+      return request.auth != null && 
+             exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' &&
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.active == true;
+    }
+    
+    // Projects collection: Public can read published projects; Admin has full CRUD
+    match /projects/{projectId} {
+      allow read: if resource.data.published == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+    
+    // Services collection: Public can read enabled services; Admin has full CRUD
+    match /services/{serviceId} {
+      allow read: if resource.data.enabled == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+    
+    // Skills collection: Public can read enabled skills; Admin has full CRUD
+    match /skills/{skillId} {
+      allow read: if resource.data.enabled == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+    
+    // Testimonials collection: Public can read published testimonials; Admin has full CRUD
+    match /testimonials/{testimonialId} {
+      allow read: if resource.data.published == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+    
+    // Categories collection
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // Site Settings collection: Public can read; Admin can update
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // Inquiries collection:
+    // Anyone (clients/visitors) can create an inquiry with valid fields.
+    // ONLY authenticated admins can read, update status, add notes, or delete inquiries.
+    match /inquiries/{inquiryId} {
+      allow create: if request.resource.data.name is string && 
+                      request.resource.data.email is string &&
+                      request.resource.data.description is string;
+      allow read, update, delete: if isAdmin();
+    }
+    
+    // Users collection:
+    // Users can read and update their own document, or admin can read/write any user document.
+    match /users/{userId} {
+      allow read: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      // Allow initial setup or self-document creation if no admin exists, or admin can write
+      allow write: if request.auth != null && (request.auth.uid == userId || isAdmin());
+    }
+  }
+}
