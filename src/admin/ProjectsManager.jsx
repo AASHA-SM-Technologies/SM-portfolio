@@ -85,10 +85,10 @@ export default function ProjectsManager() {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
             Projects & Case Studies Manager
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Manage portfolio showcases, compressed Base64 media, case studies, and live links.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function ProjectsManager() {
       {/* Filter Bar */}
       <div className="glass-panel" style={{ padding: '1.25rem', marginBottom: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ position: 'relative', flex: '1 1 260px' }}>
-          <Search size={16} color="#64748b" style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)' }} />
+          <Search size={16} color="var(--text-dim)" style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)' }} />
           <input
             type="text"
             value={search}
@@ -129,13 +129,13 @@ export default function ProjectsManager() {
       {/* Projects Table */}
       <div className="glass-panel" style={{ overflow: 'hidden' }}>
         {loading ? (
-          <div style={{ padding: '3rem', textAlign: 'center', color: '#94a3b8' }}>
+          <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
             Loading projects from Firestore...
           </div>
         ) : filteredProjects.length === 0 ? (
-          <div style={{ padding: '4rem 2rem', textAlign: 'center', color: '#94a3b8' }}>
-            <FolderGit2 size={40} color="#00f2fe" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
-            <h3 style={{ fontSize: '1.2rem', color: '#f8fafc', marginBottom: '0.5rem' }}>No Projects Found</h3>
+          <div style={{ padding: '4rem 2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+            <FolderGit2 size={40} color="var(--accent-cyan)" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
+            <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)', marginBottom: '0.5rem' }}>No Projects Found</h3>
             <p style={{ marginBottom: '1.5rem' }}>Create your first project case study to showcase on your portfolio.</p>
             <Link to="/admin/projects/new" className="btn-primary">
               <Plus size={16} /> Add First Project
@@ -145,7 +145,7 @@ export default function ProjectsManager() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
               <thead>
-                <tr style={{ background: 'rgba(255, 255, 255, 0.02)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', textAlign: 'left', color: '#94a3b8' }}>
+                <tr style={{ background: 'var(--btn-secondary-bg)', borderBottom: '1px solid var(--border-subtle)', textAlign: 'left', color: 'var(--text-muted)' }}>
                   <th style={{ padding: '1rem', width: '80px' }}>Media</th>
                   <th style={{ padding: '1rem' }}>Project Title & Industry</th>
                   <th style={{ padding: '1rem' }}>Category</th>
@@ -157,23 +157,23 @@ export default function ProjectsManager() {
               </thead>
               <tbody>
                 {filteredProjects.map((p) => (
-                  <tr key={p.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                  <tr key={p.id} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '0.85rem 1rem' }}>
-                      <div style={{ width: '60px', height: '40px', borderRadius: '6px', overflow: 'hidden' }}>
+                      <div style={{ width: '60px', height: '40px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border-subtle)' }}>
                         <WatermarkImage src={p.imageData} alt={p.title} aspectRatio="3/2" showWatermark={false} />
                       </div>
                     </td>
 
                     <td style={{ padding: '0.85rem 1rem' }}>
-                      <div style={{ fontWeight: 700, color: '#f8fafc', fontSize: '0.95rem' }}>
+                      <div style={{ fontWeight: 700, color: 'var(--text-main)', fontSize: '0.95rem' }}>
                         {p.title}
                       </div>
-                      <div style={{ fontSize: '0.75rem', color: '#38bdf8' }}>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--accent-cyan)' }}>
                         {p.industry || 'General Solution'}
                       </div>
                     </td>
 
-                    <td style={{ padding: '0.85rem 1rem', color: '#cbd5e1' }}>
+                    <td style={{ padding: '0.85rem 1rem', color: 'var(--text-main)' }}>
                       <span className="badge-tech" style={{ fontSize: '0.72rem' }}>
                         {p.subCategory || p.category}
                       </span>
@@ -183,9 +183,9 @@ export default function ProjectsManager() {
                       <button
                         onClick={() => handleToggleFeatured(p)}
                         style={{
-                          background: p.featured ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255, 255, 255, 0.04)',
-                          border: `1px solid ${p.featured ? '#f59e0b' : 'rgba(255, 255, 255, 0.1)'}`,
-                          color: p.featured ? '#f59e0b' : '#64748b',
+                          background: p.featured ? 'rgba(245, 158, 11, 0.15)' : 'var(--btn-secondary-bg)',
+                          border: `1px solid ${p.featured ? '#f59e0b' : 'var(--border-subtle)'}`,
+                          color: p.featured ? '#f59e0b' : 'var(--text-dim)',
                           padding: '0.3rem 0.6rem',
                           borderRadius: '6px',
                           cursor: 'pointer',
@@ -218,7 +218,7 @@ export default function ProjectsManager() {
                       </button>
                     </td>
 
-                    <td style={{ padding: '0.85rem 1rem', textAlign: 'center', color: '#94a3b8', fontWeight: 600 }}>
+                    <td style={{ padding: '0.85rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontWeight: 600 }}>
                       {p.sortOrder || 0}
                     </td>
 
@@ -237,9 +237,9 @@ export default function ProjectsManager() {
                         <Link
                           to={`/admin/projects/edit/${p.id}`}
                           style={{
-                            background: 'rgba(0, 242, 254, 0.12)',
-                            border: '1px solid rgba(0, 242, 254, 0.3)',
-                            color: '#00f2fe',
+                            background: 'rgba(2, 132, 199, 0.12)',
+                            border: '1px solid rgba(2, 132, 199, 0.3)',
+                            color: 'var(--accent-cyan)',
                             padding: '0.35rem 0.6rem',
                             borderRadius: '6px',
                             display: 'flex',
@@ -285,10 +285,10 @@ export default function ProjectsManager() {
               <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(244, 63, 94, 0.15)', color: '#f43f5e', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem' }}>
                 <AlertTriangle size={26} />
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#f8fafc', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
                 Delete Project?
               </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '1.75rem' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '1.75rem' }}>
                 Are you sure you want to permanently delete <strong>"{deleteModal.title}"</strong>? This action cannot be undone.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center' }}>

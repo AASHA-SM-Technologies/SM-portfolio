@@ -116,10 +116,10 @@ export default function SkillsManager() {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
             Technical Skills & Tooling CMS
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Manage the categorized technical abilities, frameworks, and APIs displayed on the public skills matrix.
           </p>
         </div>
@@ -132,13 +132,13 @@ export default function SkillsManager() {
       {/* Skills Table */}
       <div className="glass-panel" style={{ overflow: 'hidden' }}>
         {loading ? (
-          <div style={{ padding: '3rem', textAlign: 'center', color: '#94a3b8' }}>
+          <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
             Loading skills from Firestore...
           </div>
         ) : skills.length === 0 ? (
-          <div style={{ padding: '4rem 2rem', textAlign: 'center', color: '#94a3b8' }}>
-            <Cpu size={40} color="#00f2fe" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
-            <h3 style={{ fontSize: '1.2rem', color: '#f8fafc', marginBottom: '0.5rem' }}>No Skills Found</h3>
+          <div style={{ padding: '4rem 2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+            <Cpu size={40} color="var(--accent-cyan)" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
+            <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)', marginBottom: '0.5rem' }}>No Skills Found</h3>
             <p style={{ marginBottom: '1.5rem' }}>Add your technical proficiency items or seed sample portfolio data.</p>
             <button onClick={handleOpenAdd} className="btn-primary">
               <Plus size={16} /> Add First Skill
@@ -148,7 +148,7 @@ export default function SkillsManager() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
               <thead>
-                <tr style={{ background: 'rgba(255, 255, 255, 0.02)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', textAlign: 'left', color: '#94a3b8' }}>
+                <tr style={{ background: 'var(--btn-secondary-bg)', borderBottom: '1px solid var(--border-subtle)', textAlign: 'left', color: 'var(--text-muted)' }}>
                   <th style={{ padding: '1rem' }}>Technology / Skill Name</th>
                   <th style={{ padding: '1rem' }}>Category</th>
                   <th style={{ padding: '1rem' }}>Proficiency Level</th>
@@ -159,11 +159,11 @@ export default function SkillsManager() {
               </thead>
               <tbody>
                 {skills.map((s) => (
-                  <tr key={s.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                    <td style={{ padding: '1rem', fontWeight: 700, color: '#f8fafc' }}>
+                  <tr key={s.id} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                    <td style={{ padding: '1rem', fontWeight: 700, color: 'var(--text-main)' }}>
                       {s.name}
                     </td>
-                    <td style={{ padding: '1rem', color: '#38bdf8' }}>
+                    <td style={{ padding: '1rem', color: 'var(--accent-cyan)' }}>
                       {s.category}
                     </td>
                     <td style={{ padding: '1rem' }}>
@@ -171,7 +171,7 @@ export default function SkillsManager() {
                         {s.level || 'Expert'}
                       </span>
                     </td>
-                    <td style={{ padding: '1rem', textAlign: 'center', color: '#94a3b8', fontWeight: 600 }}>
+                    <td style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-muted)', fontWeight: 600 }}>
                       {s.sortOrder || 0}
                     </td>
                     <td style={{ padding: '1rem', textAlign: 'center' }}>
@@ -192,7 +192,7 @@ export default function SkillsManager() {
                       <div style={{ display: 'inline-flex', gap: '0.4rem' }}>
                         <button
                           onClick={() => handleOpenEdit(s)}
-                          style={{ background: 'rgba(0, 242, 254, 0.12)', border: '1px solid rgba(0, 242, 254, 0.3)', color: '#00f2fe', padding: '0.35rem 0.6rem', borderRadius: '6px', cursor: 'pointer' }}
+                          style={{ background: 'rgba(2, 132, 199, 0.12)', border: '1px solid rgba(2, 132, 199, 0.3)', color: 'var(--accent-cyan)', padding: '0.35rem 0.6rem', borderRadius: '6px', cursor: 'pointer' }}
                         >
                           <Edit2 size={14} />
                         </button>
@@ -217,10 +217,10 @@ export default function SkillsManager() {
         <div className="modal-overlay" onClick={() => setModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '480px', padding: '2rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#f8fafc' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-main)' }}>
                 {editingSkill ? 'Edit Skill Entry' : 'Add Technical Skill'}
               </h3>
-              <button onClick={() => setModalOpen(false)} style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer' }}>
+              <button onClick={() => setModalOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}>
                 <X size={18} />
               </button>
             </div>
@@ -246,7 +246,7 @@ export default function SkillsManager() {
                   className="input-custom"
                 >
                   {SKILL_CATEGORIES.map(c => (
-                    <option key={c} value={c} style={{ background: '#161616' }}>{c}</option>
+                    <option key={c} value={c}>{c}</option>
                   ))}
                 </select>
               </div>
@@ -259,7 +259,7 @@ export default function SkillsManager() {
                   className="input-custom"
                 >
                   {SKILL_LEVELS.map(l => (
-                    <option key={l} value={l} style={{ background: '#161616' }}>{l}</option>
+                    <option key={l} value={l}>{l}</option>
                   ))}
                 </select>
               </div>
@@ -276,12 +276,12 @@ export default function SkillsManager() {
                 </div>
 
                 <div style={{ paddingTop: '1.2rem' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: '#f8fafc', fontSize: '0.9rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: 'var(--text-main)', fontSize: '0.9rem' }}>
                     <input
                       type="checkbox"
                       checked={formData.enabled}
                       onChange={(e) => setFormData({ ...formData, enabled: e.target.checked })}
-                      style={{ width: '16px', height: '16px', accentColor: '#00f2fe' }}
+                      style={{ width: '16px', height: '16px', accentColor: 'var(--accent-cyan)' }}
                     />
                     Enabled
                   </label>

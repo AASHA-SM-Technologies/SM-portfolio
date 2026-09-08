@@ -108,10 +108,10 @@ export default function SiteSettingsManager() {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
             Site Settings & Watermark Configuration
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Configure branding, direct contact links, SEO defaults, media watermark, and database utilities.
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function SiteSettingsManager() {
 
         {/* Section 1: Developer Profile & Positioning */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             1. Professional Branding & Positioning
           </h2>
 
@@ -185,7 +185,7 @@ export default function SiteSettingsManager() {
 
         {/* Section 2: Contact Channels */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             2. Direct Client Contact Channels
           </h2>
 
@@ -240,7 +240,7 @@ export default function SiteSettingsManager() {
 
         {/* Section 3: Social & Meeting Links */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             3. Social Profiles & Schedule Links
           </h2>
 
@@ -293,17 +293,17 @@ export default function SiteSettingsManager() {
 
         {/* Section 4: Watermark System Configuration */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
-            <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <ImageIcon size={18} color="#00f2fe" /> 4. Media Watermark Overlay
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
+            <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <ImageIcon size={18} color="var(--accent-cyan)" /> 4. Media Watermark Overlay
             </h2>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: '#00f2fe', fontWeight: 600, fontSize: '0.85rem' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: 'var(--accent-cyan)', fontWeight: 600, fontSize: '0.85rem' }}>
               <input
                 type="checkbox"
                 name="enabled"
                 checked={formData.watermark?.enabled}
                 onChange={handleWatermarkChange}
-                style={{ width: '16px', height: '16px', accentColor: '#00f2fe' }}
+                style={{ width: '16px', height: '16px', accentColor: 'var(--accent-cyan)' }}
               />
               Enable Watermarking
             </label>
@@ -330,11 +330,11 @@ export default function SiteSettingsManager() {
                 onChange={handleWatermarkChange}
                 className="input-custom"
               >
-                <option value="bottom-right" style={{ background: '#161616' }}>Bottom Right (Default)</option>
-                <option value="bottom-left" style={{ background: '#161616' }}>Bottom Left</option>
-                <option value="top-right" style={{ background: '#161616' }}>Top Right</option>
-                <option value="top-left" style={{ background: '#161616' }}>Top Left</option>
-                <option value="center" style={{ background: '#161616' }}>Center</option>
+                <option value="bottom-right">Bottom Right (Default)</option>
+                <option value="bottom-left">Bottom Left</option>
+                <option value="top-right">Top Right</option>
+                <option value="top-left">Top Left</option>
+                <option value="center">Center</option>
               </select>
             </div>
 
@@ -367,7 +367,7 @@ export default function SiteSettingsManager() {
 
         {/* Section 5: SEO Defaults */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             5. Search Engine Optimization (SEO)
           </h2>
 
@@ -401,16 +401,16 @@ export default function SiteSettingsManager() {
           className="glass-card-glow"
           style={{
             padding: '2rem',
-            background: 'rgba(15, 23, 42, 0.95)',
-            border: '1px solid rgba(0, 242, 254, 0.3)'
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-medium)'
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#f8fafc', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Database size={18} color="#00f2fe" /> Initialize / Seed Default Portfolio Showcase
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Database size={18} color="var(--accent-cyan)" /> Initialize / Seed Default Portfolio Showcase
               </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.85rem', maxWidth: '600px', lineHeight: 1.5 }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', maxWidth: '600px', lineHeight: 1.5 }}>
                 Click below to populate Firestore with complete showcase projects across all 11 categories (Razorpay, AI Workflows, WhatsApp Bots, Web Apps, GMB, SaaS), services, skills matrix, and testimonials.
               </p>
             </div>
@@ -420,9 +420,9 @@ export default function SiteSettingsManager() {
               onClick={handleSeedData}
               disabled={seeding}
               style={{
-                background: 'rgba(0, 242, 254, 0.15)',
-                border: '1px solid #00f2fe',
-                color: '#00f2fe',
+                background: 'rgba(2, 132, 199, 0.12)',
+                border: '1px solid var(--accent-cyan)',
+                color: 'var(--accent-cyan)',
                 padding: '0.75rem 1.4rem',
                 borderRadius: '8px',
                 fontWeight: 700,

@@ -289,22 +289,22 @@ export default function ProjectEditor() {
               width: '36px',
               height: '36px',
               borderRadius: '8px',
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
+              background: 'var(--btn-secondary-bg)',
+              border: '1px solid var(--border-subtle)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#94a3b8',
+              color: 'var(--text-muted)',
               textDecoration: 'none'
             }}
           >
             <ArrowLeft size={18} />
           </Link>
           <div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#f8fafc' }}>
+            <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)' }}>
               {isEditing ? `Edit: ${formData.title || 'Project'}` : 'Create New Project Case Study'}
             </h1>
-            <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
               Build a complete, conversion-focused project showcase with compressed Base64 media.
             </p>
           </div>
@@ -343,7 +343,7 @@ export default function ProjectEditor() {
         
         {/* Section 1: Basic Information */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             1. Basic Project Identity
           </h2>
 
@@ -382,7 +382,7 @@ export default function ProjectEditor() {
                 className="input-custom"
               >
                 {PORTFOLIO_CATEGORIES.filter(c => c.slug !== 'all').map(c => (
-                  <option key={c.slug} value={c.slug} style={{ background: '#161616' }}>{c.name}</option>
+                  <option key={c.slug} value={c.slug}>{c.name}</option>
                 ))}
               </select>
             </div>
@@ -415,11 +415,11 @@ export default function ProjectEditor() {
 
         {/* Section 2: Media Management (Zero Firebase Storage) */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
-            <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
+            <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)' }}>
               2. Media Management (Compressed WebP Base64)
             </h2>
-            <span style={{ fontSize: '0.75rem', color: '#00f2fe', background: 'rgba(0, 242, 254, 0.1)', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
+            <span style={{ fontSize: '0.75rem', color: 'var(--accent-cyan)', background: 'var(--badge-tech-bg)', border: '1px solid var(--border-glow)', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
               Max {formatBytes(MAX_SAFE_IMAGE_BYTES)} per item
             </span>
           </div>
@@ -431,11 +431,11 @@ export default function ProjectEditor() {
               <label className="label-custom">Primary Cover Image (WebP Auto-Compress)</label>
               <div
                 style={{
-                  border: '2px dashed rgba(255, 255, 255, 0.15)',
+                  border: '2px dashed var(--border-medium)',
                   borderRadius: '12px',
                   padding: '1.5rem',
                   textAlign: 'center',
-                  background: 'rgba(15, 23, 42, 0.5)',
+                  background: 'var(--btn-secondary-bg)',
                   position: 'relative'
                 }}
               >
@@ -472,11 +472,11 @@ export default function ProjectEditor() {
                   </div>
                 ) : (
                   <div>
-                    <UploadCloud size={36} color="#00f2fe" style={{ margin: '0 auto 0.5rem', opacity: 0.8 }} />
-                    <div style={{ fontSize: '0.9rem', color: '#f8fafc', fontWeight: 600, marginBottom: '0.25rem' }}>
+                    <UploadCloud size={36} color="var(--accent-cyan)" style={{ margin: '0 auto 0.5rem', opacity: 0.8 }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.25rem' }}>
                       Click to upload cover image
                     </div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748b', marginBottom: '0.75rem' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', marginBottom: '0.75rem' }}>
                       PNG, JPG, WEBP (Auto-resized to max 1280px WebP)
                     </div>
                     <input
@@ -495,11 +495,11 @@ export default function ProjectEditor() {
               <label className="label-custom">Short Promotional Video (Optional, max 30s / 700KB)</label>
               <div
                 style={{
-                  border: '2px dashed rgba(255, 255, 255, 0.15)',
+                  border: '2px dashed var(--border-medium)',
                   borderRadius: '12px',
                   padding: '1.5rem',
                   textAlign: 'center',
-                  background: 'rgba(15, 23, 42, 0.5)',
+                  background: 'var(--btn-secondary-bg)',
                   position: 'relative'
                 }}
               >
@@ -536,11 +536,11 @@ export default function ProjectEditor() {
                   </div>
                 ) : (
                   <div>
-                    <Video size={36} color="#818cf8" style={{ margin: '0 auto 0.5rem', opacity: 0.8 }} />
-                    <div style={{ fontSize: '0.9rem', color: '#f8fafc', fontWeight: 600, marginBottom: '0.25rem' }}>
+                    <Video size={36} color="var(--accent-blue)" style={{ margin: '0 auto 0.5rem', opacity: 0.8 }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.25rem' }}>
                       Attach short promo clip
                     </div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748b', marginBottom: '0.75rem' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', marginBottom: '0.75rem' }}>
                       MP4 / WEBM under 700 KB (Strict limit)
                     </div>
                     <input
@@ -562,11 +562,11 @@ export default function ProjectEditor() {
               <label className="label-custom" style={{ margin: 0 }}>Gallery Screenshots</label>
               <label
                 style={{
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  background: 'var(--btn-secondary-bg)',
+                  border: '1px solid var(--border-subtle)',
                   padding: '0.35rem 0.75rem',
                   borderRadius: '6px',
-                  color: '#00f2fe',
+                  color: 'var(--accent-cyan)',
                   fontSize: '0.8rem',
                   cursor: 'pointer',
                   display: 'inline-flex',
@@ -586,13 +586,13 @@ export default function ProjectEditor() {
             </div>
 
             {formData.galleryImages.length === 0 ? (
-              <p style={{ color: '#64748b', fontSize: '0.85rem', fontStyle: 'italic' }}>
+              <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', fontStyle: 'italic' }}>
                 No extra screenshots added.
               </p>
             ) : (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '1rem' }}>
                 {formData.galleryImages.map((img, idx) => (
-                  <div key={idx} style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                  <div key={idx} style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--border-subtle)' }}>
                     <img src={img} alt={`Gallery ${idx}`} style={{ width: '100%', height: '90px', objectFit: 'cover' }} />
                     <button
                       type="button"
@@ -620,7 +620,7 @@ export default function ProjectEditor() {
 
         {/* Section 3: Deep Dive Case Study Content */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             3. Case Study & Architecture Narrative
           </h2>
 
@@ -702,7 +702,7 @@ export default function ProjectEditor() {
 
         {/* Section 4: Technologies, Features & Contribution */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             4. Stack, Features & Contributions
           </h2>
 
@@ -753,7 +753,7 @@ export default function ProjectEditor() {
               <button
                 type="button"
                 onClick={() => handleAddArrayItem('features')}
-                style={{ background: 'none', border: 'none', color: '#00f2fe', fontSize: '0.8rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
+                style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', fontSize: '0.8rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
               >
                 <Plus size={14} /> Add Feature Bullet
               </button>
@@ -790,7 +790,7 @@ export default function ProjectEditor() {
               <button
                 type="button"
                 onClick={() => handleAddArrayItem('contribution')}
-                style={{ background: 'none', border: 'none', color: '#00f2fe', fontSize: '0.8rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
+                style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', fontSize: '0.8rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.25rem' }}
               >
                 <Plus size={14} /> Add Contribution
               </button>
@@ -824,7 +824,7 @@ export default function ProjectEditor() {
 
         {/* Section 5: URLs, Publishing & Sort Order */}
         <div className="glass-panel" style={{ padding: '2rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
             5. Links, Visibility & Sorting
           </h2>
 
@@ -877,19 +877,19 @@ export default function ProjectEditor() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', color: '#f8fafc', fontWeight: 600 }}>
+          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', paddingTop: '1rem', borderTop: '1px solid var(--border-subtle)' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', color: 'var(--text-main)', fontWeight: 600 }}>
               <input
                 type="checkbox"
                 name="featured"
                 checked={formData.featured}
                 onChange={handleChange}
-                style={{ width: '18px', height: '18px', accentColor: '#00f2fe' }}
+                style={{ width: '18px', height: '18px', accentColor: 'var(--accent-cyan)' }}
               />
               Show in Featured Section on Homepage
             </label>
 
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', color: '#f8fafc', fontWeight: 600 }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', color: 'var(--text-main)', fontWeight: 600 }}>
               <input
                 type="checkbox"
                 name="published"

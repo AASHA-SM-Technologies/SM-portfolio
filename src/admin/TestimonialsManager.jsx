@@ -129,10 +129,10 @@ export default function TestimonialsManager() {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
             Client Testimonials CMS
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Manage client reviews, ratings, and quotes showcased across the portfolio.
           </p>
         </div>
@@ -145,13 +145,13 @@ export default function TestimonialsManager() {
       {/* Table */}
       <div className="glass-panel" style={{ overflow: 'hidden' }}>
         {loading ? (
-          <div style={{ padding: '3rem', textAlign: 'center', color: '#94a3b8' }}>
+          <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
             Loading testimonials from Firestore...
           </div>
         ) : testimonials.length === 0 ? (
-          <div style={{ padding: '4rem 2rem', textAlign: 'center', color: '#94a3b8' }}>
-            <Quote size={40} color="#00f2fe" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
-            <h3 style={{ fontSize: '1.2rem', color: '#f8fafc', marginBottom: '0.5rem' }}>No Testimonials Found</h3>
+          <div style={{ padding: '4rem 2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+            <Quote size={40} color="var(--accent-cyan)" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
+            <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)', marginBottom: '0.5rem' }}>No Testimonials Found</h3>
             <p style={{ marginBottom: '1.5rem' }}>Add your first client quote to build trust and social proof.</p>
             <button onClick={handleOpenAdd} className="btn-primary">
               <Plus size={16} /> Add First Testimonial
@@ -161,7 +161,7 @@ export default function TestimonialsManager() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
               <thead>
-                <tr style={{ background: 'rgba(255, 255, 255, 0.02)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', textAlign: 'left', color: '#94a3b8' }}>
+                <tr style={{ background: 'var(--btn-secondary-bg)', borderBottom: '1px solid var(--border-subtle)', textAlign: 'left', color: 'var(--text-muted)' }}>
                   <th style={{ padding: '1rem' }}>Client Name</th>
                   <th style={{ padding: '1rem' }}>Business & Role</th>
                   <th style={{ padding: '1rem' }}>Rating</th>
@@ -172,13 +172,13 @@ export default function TestimonialsManager() {
               </thead>
               <tbody>
                 {testimonials.map((t) => (
-                  <tr key={t.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                    <td style={{ padding: '1rem', fontWeight: 700, color: '#f8fafc' }}>
+                  <tr key={t.id} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                    <td style={{ padding: '1rem', fontWeight: 700, color: 'var(--text-main)' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                         {t.imageData ? (
                           <img src={t.imageData} alt={t.clientName} style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }} />
                         ) : (
-                          <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(0, 242, 254, 0.15)', color: '#00f2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.85rem' }}>
+                          <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(2, 132, 199, 0.15)', color: 'var(--accent-cyan)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.85rem' }}>
                             {t.clientName?.charAt(0) || 'C'}
                           </div>
                         )}
@@ -186,9 +186,9 @@ export default function TestimonialsManager() {
                       </div>
                     </td>
 
-                    <td style={{ padding: '1rem', color: '#cbd5e1' }}>
+                    <td style={{ padding: '1rem', color: 'var(--text-main)' }}>
                       <div>{t.businessName}</div>
-                      {t.designation && <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{t.designation}</div>}
+                      {t.designation && <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>{t.designation}</div>}
                     </td>
 
                     <td style={{ padding: '1rem' }}>
@@ -199,7 +199,7 @@ export default function TestimonialsManager() {
                       </div>
                     </td>
 
-                    <td style={{ padding: '1rem', color: '#94a3b8', fontSize: '0.82rem', maxWidth: '320px' }}>
+                    <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.82rem', maxWidth: '320px' }}>
                       "{t.message}"
                     </td>
 
@@ -222,7 +222,7 @@ export default function TestimonialsManager() {
                       <div style={{ display: 'inline-flex', gap: '0.4rem' }}>
                         <button
                           onClick={() => handleOpenEdit(t)}
-                          style={{ background: 'rgba(0, 242, 254, 0.12)', border: '1px solid rgba(0, 242, 254, 0.3)', color: '#00f2fe', padding: '0.35rem 0.6rem', borderRadius: '6px', cursor: 'pointer' }}
+                          style={{ background: 'rgba(2, 132, 199, 0.12)', border: '1px solid rgba(2, 132, 199, 0.3)', color: 'var(--accent-cyan)', padding: '0.35rem 0.6rem', borderRadius: '6px', cursor: 'pointer' }}
                         >
                           <Edit2 size={14} />
                         </button>
@@ -247,10 +247,10 @@ export default function TestimonialsManager() {
         <div className="modal-overlay" onClick={() => setModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '520px', padding: '2rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#f8fafc' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-main)' }}>
                 {editingItem ? 'Edit Testimonial' : 'Add Client Testimonial'}
               </h3>
-              <button onClick={() => setModalOpen(false)} style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer' }}>
+              <button onClick={() => setModalOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}>
                 <X size={18} />
               </button>
             </div>
@@ -301,7 +301,7 @@ export default function TestimonialsManager() {
                     className="input-custom"
                   >
                     {[5, 4, 3, 2, 1].map(r => (
-                      <option key={r} value={r} style={{ background: '#161616' }}>{r} Stars</option>
+                      <option key={r} value={r}>{r} Stars</option>
                     ))}
                   </select>
                 </div>
@@ -342,7 +342,7 @@ export default function TestimonialsManager() {
                 </div>
 
                 <div style={{ paddingTop: '1.2rem' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: '#f8fafc', fontSize: '0.9rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', color: 'var(--text-main)', fontSize: '0.9rem' }}>
                     <input
                       type="checkbox"
                       checked={formData.published}

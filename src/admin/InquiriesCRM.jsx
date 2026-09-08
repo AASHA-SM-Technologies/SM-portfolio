@@ -143,10 +143,10 @@ export default function InquiriesCRM() {
       {/* Page Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
             Client Leads & Inquiries CRM
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Track incoming project requirements, manage pipeline stages, and initiate direct communication.
           </p>
         </div>
@@ -166,9 +166,9 @@ export default function InquiriesCRM() {
         <button
           onClick={() => setStatusFilter('all')}
           style={{
-            background: statusFilter === 'all' ? 'var(--gradient-primary)' : 'rgba(255, 255, 255, 0.04)',
-            color: statusFilter === 'all' ? '#111111' : '#9ca3af',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
+            background: statusFilter === 'all' ? 'var(--gradient-primary)' : 'var(--btn-secondary-bg)',
+            color: statusFilter === 'all' ? '#ffffff' : 'var(--text-muted)',
+            border: '1px solid var(--border-subtle)',
             padding: '0.5rem 1rem',
             borderRadius: '9999px',
             fontSize: '0.82rem',
@@ -188,9 +188,9 @@ export default function InquiriesCRM() {
               key={key}
               onClick={() => setStatusFilter(key)}
               style={{
-                background: isSelected ? config.bg : 'rgba(255, 255, 255, 0.04)',
-                color: isSelected ? config.color : '#94a3b8',
-                border: `1px solid ${isSelected ? config.color : 'rgba(255, 255, 255, 0.08)'}`,
+                background: isSelected ? config.bg : 'var(--btn-secondary-bg)',
+                color: isSelected ? config.color : 'var(--text-muted)',
+                border: `1px solid ${isSelected ? config.color : 'var(--border-subtle)'}`,
                 padding: '0.5rem 1rem',
                 borderRadius: '9999px',
                 fontSize: '0.82rem',
@@ -212,7 +212,7 @@ export default function InquiriesCRM() {
       {/* Search Input */}
       <div className="glass-panel" style={{ padding: '1rem 1.25rem', marginBottom: '2rem' }}>
         <div style={{ position: 'relative' }}>
-          <Search size={16} color="#64748b" style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)' }} />
+          <Search size={16} color="var(--text-dim)" style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)' }} />
           <input
             type="text"
             value={searchQuery}
@@ -230,20 +230,20 @@ export default function InquiriesCRM() {
         {/* Table View */}
         <div className="glass-panel" style={{ overflow: 'hidden' }}>
           {loading ? (
-            <div style={{ padding: '3rem', textAlign: 'center', color: '#94a3b8' }}>
+            <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
               Loading inquiries from Firestore...
             </div>
           ) : filteredInquiries.length === 0 ? (
-            <div style={{ padding: '4rem 2rem', textAlign: 'center', color: '#94a3b8' }}>
-              <Inbox size={40} color="#00f2fe" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
-              <h3 style={{ fontSize: '1.2rem', color: '#f8fafc', marginBottom: '0.5rem' }}>No Inquiries Match Filter</h3>
+            <div style={{ padding: '4rem 2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+              <Inbox size={40} color="var(--accent-cyan)" style={{ margin: '0 auto 1rem', opacity: 0.5 }} />
+              <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)', marginBottom: '0.5rem' }}>No Inquiries Match Filter</h3>
               <p>Try clearing your search query or selecting "All Inquiries".</p>
             </div>
           ) : (
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
                 <thead>
-                  <tr style={{ background: 'rgba(255, 255, 255, 0.02)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', textAlign: 'left', color: '#94a3b8' }}>
+                  <tr style={{ background: 'var(--btn-secondary-bg)', borderBottom: '1px solid var(--border-subtle)', textAlign: 'left', color: 'var(--text-muted)' }}>
                     <th style={{ padding: '1rem' }}>Client & Business</th>
                     <th style={{ padding: '1rem' }}>Requirement</th>
                     <th style={{ padding: '1rem' }}>Budget / Timeline</th>
@@ -261,33 +261,33 @@ export default function InquiriesCRM() {
                         key={inq.id}
                         onClick={() => handleSelectInquiry(inq)}
                         style={{
-                          borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                          background: isSelected ? 'rgba(0, 242, 254, 0.06)' : 'transparent',
+                          borderBottom: '1px solid var(--border-subtle)',
+                          background: isSelected ? 'rgba(2, 132, 199, 0.08)' : 'transparent',
                           cursor: 'pointer',
                           transition: 'background 0.15s'
                         }}
                       >
                         <td style={{ padding: '1rem' }}>
-                          <div style={{ fontWeight: 700, color: '#f8fafc', fontSize: '0.95rem' }}>
+                          <div style={{ fontWeight: 700, color: 'var(--text-main)', fontSize: '0.95rem' }}>
                             {inq.name}
                           </div>
                           {inq.businessName && (
-                            <div style={{ fontSize: '0.75rem', color: '#38bdf8' }}>{inq.businessName}</div>
+                            <div style={{ fontSize: '0.75rem', color: 'var(--accent-cyan)' }}>{inq.businessName}</div>
                           )}
                         </td>
 
-                        <td style={{ padding: '1rem', color: '#cbd5e1' }}>
+                        <td style={{ padding: '1rem', color: 'var(--text-main)' }}>
                           <span className="badge-tech" style={{ fontSize: '0.72rem' }}>
                             {inq.requirementType}
                           </span>
                         </td>
 
-                        <td style={{ padding: '1rem', fontSize: '0.8rem', color: '#94a3b8' }}>
+                        <td style={{ padding: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                           <div>{inq.budget}</div>
-                          <div style={{ color: '#64748b' }}>{inq.timeline}</div>
+                          <div style={{ color: 'var(--text-dim)' }}>{inq.timeline}</div>
                         </td>
 
-                        <td style={{ padding: '1rem', fontSize: '0.82rem', color: '#cbd5e1' }}>
+                        <td style={{ padding: '1rem', fontSize: '0.82rem', color: 'var(--text-main)' }}>
                           <div>{inq.email}</div>
                           {(inq.whatsapp || inq.phone) && (
                             <div style={{ color: '#25d366' }}>{inq.whatsapp || inq.phone}</div>
@@ -339,8 +339,8 @@ export default function InquiriesCRM() {
               padding: '2rem',
               position: 'sticky',
               top: '5.5rem',
-              border: '1px solid rgba(0, 242, 254, 0.3)',
-              boxShadow: '0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 242, 254, 0.1)'
+              border: '1px solid var(--border-medium)',
+              boxShadow: 'var(--shadow-lg)'
             }}
           >
             {/* Drawer Header */}
@@ -350,8 +350,8 @@ export default function InquiriesCRM() {
                   style={{
                     fontSize: '0.72rem',
                     fontWeight: 700,
-                    color: STATUS_CONFIG[selectedInquiry.status]?.color || '#00f2fe',
-                    background: STATUS_CONFIG[selectedInquiry.status]?.bg || 'rgba(0, 242, 254, 0.15)',
+                    color: STATUS_CONFIG[selectedInquiry.status]?.color || 'var(--accent-cyan)',
+                    background: STATUS_CONFIG[selectedInquiry.status]?.bg || 'rgba(2, 132, 199, 0.15)',
                     padding: '0.25rem 0.6rem',
                     borderRadius: '4px',
                     textTransform: 'uppercase',
@@ -361,11 +361,11 @@ export default function InquiriesCRM() {
                 >
                   {STATUS_CONFIG[selectedInquiry.status]?.label || selectedInquiry.status}
                 </span>
-                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#f8fafc' }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-main)' }}>
                   {selectedInquiry.name}
                 </h3>
                 {selectedInquiry.businessName && (
-                  <div style={{ fontSize: '0.85rem', color: '#38bdf8' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--accent-cyan)' }}>
                     {selectedInquiry.businessName}
                   </div>
                 )}
@@ -373,7 +373,7 @@ export default function InquiriesCRM() {
 
               <button
                 onClick={() => setSelectedInquiry(null)}
-                style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '4px' }}
+                style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '4px' }}
               >
                 <X size={18} />
               </button>
@@ -418,7 +418,7 @@ export default function InquiriesCRM() {
                 style={{ cursor: 'pointer' }}
               >
                 {Object.entries(STATUS_CONFIG).map(([key, config]) => (
-                  <option key={key} value={key} style={{ background: '#161616' }}>
+                  <option key={key} value={key}>
                     {config.label}
                   </option>
                 ))}
@@ -426,37 +426,37 @@ export default function InquiriesCRM() {
             </div>
 
             {/* Details Breakdown */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.85rem', marginBottom: '1.5rem', background: 'rgba(255, 255, 255, 0.02)', padding: '1rem', borderRadius: '8px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.85rem', marginBottom: '1.5rem', background: 'var(--btn-secondary-bg)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-subtle)' }}>
               <div>
-                <span style={{ color: '#64748b' }}>Requirement: </span>
-                <strong style={{ color: '#f8fafc' }}>{selectedInquiry.requirementType}</strong>
+                <span style={{ color: 'var(--text-dim)' }}>Requirement: </span>
+                <strong style={{ color: 'var(--text-main)' }}>{selectedInquiry.requirementType}</strong>
               </div>
               <div>
-                <span style={{ color: '#64748b' }}>Budget: </span>
-                <span style={{ color: '#cbd5e1' }}>{selectedInquiry.budget}</span>
+                <span style={{ color: 'var(--text-dim)' }}>Budget: </span>
+                <span style={{ color: 'var(--text-main)' }}>{selectedInquiry.budget}</span>
               </div>
               <div>
-                <span style={{ color: '#64748b' }}>Timeline: </span>
-                <span style={{ color: '#cbd5e1' }}>{selectedInquiry.timeline}</span>
+                <span style={{ color: 'var(--text-dim)' }}>Timeline: </span>
+                <span style={{ color: 'var(--text-main)' }}>{selectedInquiry.timeline}</span>
               </div>
               <div>
-                <span style={{ color: '#64748b' }}>Preferred Contact: </span>
-                <span style={{ color: '#cbd5e1' }}>{selectedInquiry.preferredContact}</span>
+                <span style={{ color: 'var(--text-dim)' }}>Preferred Contact: </span>
+                <span style={{ color: 'var(--text-main)' }}>{selectedInquiry.preferredContact}</span>
               </div>
               <div>
-                <span style={{ color: '#64748b' }}>Source Page: </span>
-                <span style={{ color: '#00f2fe' }}>{selectedInquiry.sourcePage || 'Contact Page'}</span>
+                <span style={{ color: 'var(--text-dim)' }}>Source Page: </span>
+                <span style={{ color: 'var(--accent-cyan)' }}>{selectedInquiry.sourcePage || 'Contact Page'}</span>
               </div>
               <div>
-                <span style={{ color: '#64748b' }}>Submitted: </span>
-                <span style={{ color: '#94a3b8' }}>{new Date(selectedInquiry.createdAt).toLocaleString()}</span>
+                <span style={{ color: 'var(--text-dim)' }}>Submitted: </span>
+                <span style={{ color: 'var(--text-muted)' }}>{new Date(selectedInquiry.createdAt).toLocaleString()}</span>
               </div>
             </div>
 
             {/* Project Requirement Description */}
             <div style={{ marginBottom: '1.5rem' }}>
               <label className="label-custom">Client Project Description</label>
-              <div style={{ background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '8px', padding: '1rem', fontSize: '0.88rem', color: '#cbd5e1', lineHeight: 1.6, maxHeight: '180px', overflowY: 'auto' }}>
+              <div style={{ background: 'var(--bg-main)', border: '1px solid var(--border-subtle)', borderRadius: '8px', padding: '1rem', fontSize: '0.88rem', color: 'var(--text-main)', lineHeight: 1.6, maxHeight: '180px', overflowY: 'auto' }}>
                 {selectedInquiry.description}
               </div>
             </div>
@@ -469,7 +469,7 @@ export default function InquiriesCRM() {
                   type="button"
                   onClick={handleSaveNotes}
                   disabled={updating}
-                  style={{ background: 'none', border: 'none', color: '#00f2fe', fontSize: '0.78rem', cursor: 'pointer', fontWeight: 600 }}
+                  style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', fontSize: '0.78rem', cursor: 'pointer', fontWeight: 600 }}
                 >
                   Save Notes
                 </button>

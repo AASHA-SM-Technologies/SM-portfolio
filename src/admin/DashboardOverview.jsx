@@ -77,10 +77,10 @@ export default function DashboardOverview() {
       {/* Welcome Banner */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
             Welcome to Nexvora CMS
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Here is a live summary of your projects, lead generation inquiries, and digital solution stats.
           </p>
         </div>
@@ -115,12 +115,12 @@ export default function DashboardOverview() {
               flexDirection: 'column',
               justifyContent: 'space-between',
               textDecoration: 'none',
-              border: card.highlight ? '1px solid #f43f5e' : '1px solid rgba(255, 255, 255, 0.08)',
+              border: card.highlight ? '1px solid #f43f5e' : '1px solid var(--border-subtle)',
               position: 'relative'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-              <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#94a3b8' }}>
+              <span style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-muted)' }}>
                 {card.title}
               </span>
               <div
@@ -128,7 +128,7 @@ export default function DashboardOverview() {
                   width: '32px',
                   height: '32px',
                   borderRadius: '8px',
-                  background: `rgba(${parseInt(card.color.slice(1, 3), 16)}, ${parseInt(card.color.slice(3, 5), 16)}, ${parseInt(card.color.slice(5, 7), 16)}, 0.15)`,
+                  background: `rgba(${parseInt(card.color.slice(1, 3), 16) || 2}, ${parseInt(card.color.slice(3, 5), 16) || 132}, ${parseInt(card.color.slice(5, 7), 16) || 199}, 0.15)`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -139,7 +139,7 @@ export default function DashboardOverview() {
               </div>
             </div>
 
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#f8fafc', lineHeight: 1 }}>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1 }}>
               {loading ? '...' : card.value}
             </div>
           </Link>
@@ -150,32 +150,32 @@ export default function DashboardOverview() {
       <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc', marginBottom: '0.25rem' }}>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.25rem' }}>
               Recent Client Lead Inquiries
             </h2>
-            <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
               Incoming project requirements submitted directly via the portfolio
             </p>
           </div>
 
           <Link
             to="/admin/inquiries"
-            style={{ color: '#00f2fe', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
+            style={{ color: 'var(--accent-cyan)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
           >
             View All Inquiries <ArrowRight size={14} />
           </Link>
         </div>
 
         {recentInquiries.length === 0 ? (
-          <div style={{ padding: '2.5rem', textAlign: 'center', color: '#94a3b8' }}>
-            <Inbox size={36} color="#00f2fe" style={{ margin: '0 auto 0.75rem', opacity: 0.5 }} />
+          <div style={{ padding: '2.5rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+            <Inbox size={36} color="var(--accent-cyan)" style={{ margin: '0 auto 0.75rem', opacity: 0.5 }} />
             <p>No inquiries yet. Test the contact form or inquiry modal on the public site to see submissions appear here!</p>
           </div>
         ) : (
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.1)', textAlign: 'left', color: '#94a3b8' }}>
+                <tr style={{ background: 'var(--btn-secondary-bg)', borderBottom: '1px solid var(--border-subtle)', textAlign: 'left', color: 'var(--text-muted)' }}>
                   <th style={{ padding: '0.75rem 1rem' }}>Client Name</th>
                   <th style={{ padding: '0.75rem 1rem' }}>Requirement Type</th>
                   <th style={{ padding: '0.75rem 1rem' }}>Budget</th>
@@ -186,32 +186,32 @@ export default function DashboardOverview() {
               </thead>
               <tbody>
                 {recentInquiries.map((inq) => {
-                  let statusColor = '#94a3b8';
-                  let statusBg = 'rgba(255, 255, 255, 0.05)';
+                  let statusColor = 'var(--text-muted)';
+                  let statusBg = 'var(--btn-secondary-bg)';
                   if (inq.status === 'new') {
                     statusColor = '#f43f5e';
                     statusBg = 'rgba(244, 63, 94, 0.15)';
                   } else if (inq.status === 'qualified') {
-                    statusColor = '#00f2fe';
-                    statusBg = 'rgba(0, 242, 254, 0.15)';
+                    statusColor = 'var(--accent-cyan)';
+                    statusBg = 'rgba(2, 132, 199, 0.15)';
                   } else if (inq.status === 'won') {
                     statusColor = '#10b981';
                     statusBg = 'rgba(16, 185, 129, 0.15)';
                   }
 
                   return (
-                    <tr key={inq.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                      <td style={{ padding: '1rem', fontWeight: 600, color: '#f8fafc' }}>
+                    <tr key={inq.id} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                      <td style={{ padding: '1rem', fontWeight: 600, color: 'var(--text-main)' }}>
                         <div>{inq.name}</div>
-                        {inq.businessName && <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{inq.businessName}</div>}
+                        {inq.businessName && <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>{inq.businessName}</div>}
                       </td>
-                      <td style={{ padding: '1rem', color: '#cbd5e1' }}>
+                      <td style={{ padding: '1rem', color: 'var(--text-main)' }}>
                         {inq.requirementType}
                       </td>
-                      <td style={{ padding: '1rem', color: '#94a3b8', fontSize: '0.82rem' }}>
+                      <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.82rem' }}>
                         {inq.budget}
                       </td>
-                      <td style={{ padding: '1rem', color: '#cbd5e1' }}>
+                      <td style={{ padding: '1rem', color: 'var(--text-main)' }}>
                         <div>{inq.email}</div>
                         {inq.whatsapp && (
                           <div style={{ fontSize: '0.78rem', color: '#25d366' }}>{inq.whatsapp}</div>

@@ -29,10 +29,10 @@ export default function AdminLayout() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#111111', color: '#00f2fe' }}>
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-main)', color: 'var(--accent-cyan)' }}>
         <div style={{ textAlign: 'center' }}>
           <div className="skeleton" style={{ width: '48px', height: '48px', borderRadius: '50%', margin: '0 auto 1rem' }} />
-          <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>Verifying Administrator Permissions...</div>
+          <div style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text-main)' }}>Verifying Administrator Permissions...</div>
         </div>
       </div>
     );
