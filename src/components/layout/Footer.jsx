@@ -35,7 +35,7 @@ export default function Footer() {
   };
 
   const whatsappClean = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
-  const whatsappLink = `https://wa.me/${whatsappClean}?text=${encodeURIComponent("Hello Aditya, I'm reaching out from your portfolio to discuss a new digital solution for my business.")}`;
+  const whatsappLink = `https://wa.me/${whatsappClean}?text=${encodeURIComponent("Hello Nexvora Technologies, I'm reaching out from your website to discuss a new digital solution for my business.")}`;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -73,7 +73,7 @@ export default function Footer() {
             <div className="footer-heading-col" style={{ flex: '0 0 auto' }}>
               <h2
                 onClick={handleSecretAdminTrigger}
-                title="Aditya Jamdade"
+                title="Nexvora Technologies"
                 style={{
                   fontSize: 'clamp(2.2rem, 3.6vw, 3.4rem)',
                   color: '#ffffff',
@@ -304,7 +304,7 @@ export default function Footer() {
           }}
         >
           <div>
-            © {currentYear} {siteConfig?.name || 'Digi Sahyadri'}. All rights reserved.
+            © {currentYear} {siteConfig?.name || 'Nexvora Technologies'}. All rights reserved.
           </div>
 
           <div className="footer-legal-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
@@ -387,7 +387,7 @@ export default function Footer() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat with Aditya Jamdade on WhatsApp"
+          aria-label="Chat with Nexvora Technologies on WhatsApp"
           className="floating-wa-button"
           style={{
             width: '54px',

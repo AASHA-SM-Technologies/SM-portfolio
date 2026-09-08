@@ -43,7 +43,7 @@ export async function compressImage(file, options = {}) {
     maxHeight = 1280,
     quality = 0.78,
     format = 'image/webp',
-    watermark = null // { text: 'Aditya Jamdade', position: 'bottom-right', opacity: 0.25, fontSize: 16 }
+    watermark = null // { text: 'Nexvora Technologies', position: 'bottom-right', opacity: 0.25, fontSize: 16 }
   } = options;
 
   if (!file || !file.type.startsWith('image/')) {
@@ -145,7 +145,7 @@ export async function compressImage(file, options = {}) {
  * Apply canvas-based watermark
  */
 function applyWatermarkToCanvas(ctx, width, height, watermark) {
-  const text = watermark.text || 'Aditya Jamdade';
+  const text = watermark.text || 'Nexvora Technologies';
   const fontSize = watermark.fontSize || Math.max(14, Math.round(width * 0.025));
   const opacity = watermark.opacity !== undefined ? watermark.opacity : 0.35;
   const position = watermark.position || 'bottom-right';

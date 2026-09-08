@@ -156,7 +156,7 @@ export default function ContactPage() {
       ? selectedRequirements.join(', ')
       : 'a digital solution / project';
     const text = encodeURIComponent(
-      `Hello Aditya, I'm reaching out from your portfolio to discuss ${reqText} for my business.`
+      `Hello Nexvora Technologies, I'm reaching out to discuss ${reqText} for my business.`
     );
     return `https://wa.me/${phone}?text=${text}`;
   };
@@ -165,7 +165,7 @@ export default function ContactPage() {
     <div className="contact-page-wrapper" style={{ paddingTop: '3rem', paddingBottom: '6rem' }}>
       <SEO
         title="Contact & Project Consultation"
-        description="Submit your digital solution requirement or book a technical consultation with Aditya Jamdade for websites, business software, payments, and AI automations."
+        description="Submit your digital solution requirement or book a technical consultation with Nexvora Technologies for websites, business software, payments, and AI automations."
       />
 
       <div className="container-custom">

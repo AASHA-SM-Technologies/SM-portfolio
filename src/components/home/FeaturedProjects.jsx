@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProjects } from '../../services/firestoreService';
+import { getProjects, DEFAULT_PROJECTS } from '../../services/firestoreService';
 import { useSite } from '../../context/SiteContext';
 import { ProjectCardSkeleton } from '../common/SkeletonLoader';
 import WatermarkImage from '../common/WatermarkImage';
@@ -20,10 +20,17 @@ export default function FeaturedProjects() {
 
   useEffect(() => {
     async function load() {
-      const data = await getProjects({ featuredOnly: true, publishedOnly: true, maxResults: 10 });
-      // Strictly show top 3 on home page
-      setProjects(data.slice(0, 3));
-      setLoading(false);
+      setLoading(true);
+      try {
+        // Fetch exact same published projects as /projects page
+        const data = await getProjects({ publishedOnly: true, maxResults: 100 });
+        setProjects((data && data.length > 0 ? data : DEFAULT_PROJECTS).slice(0, 3));
+      } catch (err) {
+        console.error('Failed to load featured projects:', err);
+        setProjects(DEFAULT_PROJECTS.slice(0, 3));
+      } finally {
+        setLoading(false);
+      }
     }
     load();
   }, []);

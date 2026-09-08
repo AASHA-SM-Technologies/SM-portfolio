@@ -17,23 +17,23 @@ import {
 export default function SiteSettingsManager() {
   const { siteConfig, refreshSiteConfig, showToast } = useSite();
   const [formData, setFormData] = useState({
-    name: "Aditya Jamdade",
-    title: "Full-Stack Developer & Digital Solutions Specialist",
+    name: "Nexvora Technologies",
+    title: "Software & Digital Solutions Studio",
     tagline: "Websites • Software • Applications • APIs • Payments • AI Automation • Digital Solutions",
-    bio: "I build high-performance websites, custom business software, scalable applications, Razorpay payment systems, WhatsApp API integrations, AI automations and custom digital solutions for businesses.",
+    bio: "At Nexvora Technologies, we engineer high-performance websites, bespoke business software, scalable applications, Razorpay payment systems, WhatsApp API integrations, AI automations and custom digital solutions for businesses.",
     email: "adityajamdade2124@gmail.com",
     phone: "+91 90224 10301",
     whatsapp: "+91 90224 10301",
-    location: "Sangli / Pune / Mumbai, India (Available Worldwide)",
+    location: "Sangli / Pune / Mumbai, India (Serving Clients Globally)",
     resumeUrl: "#",
     linkedinUrl: "https://linkedin.com",
     githubUrl: "https://github.com",
     calendlyUrl: "https://cal.com",
-    seoTitle: "Aditya Jamdade | Full-Stack Developer & Digital Solutions Specialist",
-    seoDescription: "Professional full-stack web developer and digital solutions consultant. Custom websites, web applications, Razorpay payment integrations, WhatsApp APIs, AI automations & technical support.",
+    seoTitle: "Nexvora Technologies | Full-Stack Software & Digital Solutions",
+    seoDescription: "Nexvora Technologies is a premier software development studio delivering custom websites, web applications, Razorpay payment integrations, WhatsApp APIs, AI automations & technical support.",
     watermark: {
       enabled: true,
-      text: "Aditya Jamdade",
+      text: "Nexvora Technologies",
       position: "bottom-right",
       opacity: 0.25,
       fontSize: 14
@@ -136,7 +136,7 @@ export default function SiteSettingsManager() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
             <div>
-              <label className="label-custom">Full Name</label>
+              <label className="label-custom">Company / Brand Name</label>
               <input
                 type="text"
                 name="name"
@@ -317,7 +317,7 @@ export default function SiteSettingsManager() {
                 name="text"
                 value={formData.watermark?.text}
                 onChange={handleWatermarkChange}
-                placeholder="Aditya Jamdade"
+                placeholder="Nexvora Technologies"
                 className="input-custom"
               />
             </div>

@@ -83,14 +83,20 @@ export default function AdminLayout() {
       >
         <div>
           {/* Brand Header */}
-          <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'var(--badge-tech-bg)', border: '1px solid var(--border-glow)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-cyan)' }}>
-              <Shield size={20} />
-            </div>
-            <div>
-              <div style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--text-main)' }}>Portfolio CMS</div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--accent-cyan)', fontWeight: 600 }}>Admin Master Control</div>
-            </div>
+          <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <img
+              src="/Nexvora_Logo_Transparent.png"
+              alt="Nexvora Logo"
+              style={{
+                height: '28px',
+                width: 'auto',
+                maxWidth: '135px',
+                objectFit: 'contain'
+              }}
+            />
+            <span style={{ fontSize: '0.68rem', background: 'var(--badge-tech-bg)', border: '1px solid var(--border-glow)', color: 'var(--accent-cyan)', padding: '0.2rem 0.5rem', borderRadius: '6px', fontWeight: 700 }}>
+              CMS
+            </span>
           </div>
 
           {/* Quick Action Button */}
@@ -142,7 +148,7 @@ export default function AdminLayout() {
             </div>
             <div style={{ overflow: 'hidden' }}>
               <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                {currentUser?.displayName || 'Aditya Jamdade'}
+                {currentUser?.displayName || 'Nexvora Admin'}
               </div>
               <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                 {currentUser?.email}

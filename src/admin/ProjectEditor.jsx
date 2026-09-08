@@ -848,7 +848,7 @@ export default function ProjectEditor() {
                 name="demoUrl"
                 value={formData.demoUrl}
                 onChange={handleChange}
-                placeholder="https://demo.adityajamdade.com"
+                placeholder="https://demo.nexvora.com"
                 className="input-custom"
               />
             </div>

@@ -95,7 +95,7 @@ export default function ProjectDetailPage() {
     if (navigator.share) {
       navigator.share({
         title: project?.title || 'Case Study',
-        text: project?.shortDescription || 'Check out this technical case study by Aditya Jamdade',
+        text: project?.shortDescription || 'Check out this technical case study by Nexvora Technologies',
         url: window.location.href
       }).catch(() => {});
     } else {
@@ -107,7 +107,7 @@ export default function ProjectDetailPage() {
   const whatsappInquiryUrl = () => {
     const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
     const text = encodeURIComponent(
-      `Hello Aditya, I was reviewing your case study "${project?.title || 'Project'}" on your portfolio and would like to discuss a similar solution for my business.`
+      `Hello Nexvora Technologies, I was reviewing your case study "${project?.title || 'Project'}" on your website and would like to discuss a similar solution for my business.`
     );
     return `https://wa.me/${phone}?text=${text}`;
   };
@@ -786,11 +786,11 @@ export default function ProjectDetailPage() {
               </div>
             )}
 
-            {/* Aditya's Direct Contribution */}
+            {/* Nexvora Engineering Scope */}
             {project.contribution && project.contribution.length > 0 && (
               <div className="glass-panel" style={{ padding: '2rem' }}>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Award size={18} color="#f59e0b" /> Aditya's Technical Role
+                  <Award size={18} color="#f59e0b" /> Nexvora Engineering Scope
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {project.contribution.map((item, idx) => (

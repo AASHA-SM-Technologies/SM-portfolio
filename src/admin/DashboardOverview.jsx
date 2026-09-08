@@ -78,7 +78,7 @@ export default function DashboardOverview() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
-            Welcome back, Aditya!
+            Welcome to Nexvora CMS
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
             Here is a live summary of your projects, lead generation inquiries, and digital solution stats.

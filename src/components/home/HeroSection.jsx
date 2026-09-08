@@ -60,7 +60,7 @@ export default function HeroSection({ projectsCount = 28 }) {
   const directWhatsAppUrl = () => {
     const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
     const text = encodeURIComponent(
-      "Hello Aditya, I'm reaching out from your portfolio to discuss a project for my business."
+      "Hello Nexvora Technologies, I'm reaching out from your website to discuss a digital project for my business."
     );
     return `https://wa.me/${phone}?text=${text}`;
   };
@@ -174,7 +174,7 @@ export default function HeroSection({ projectsCount = 28 }) {
                   color: 'var(--accent-cyan)'
                 }}
               >
-                ADITYA JAMDADE • FULL-STACK DEVELOPER
+                NEXVORA TECHNOLOGIES • DIGITAL SOLUTIONS STUDIO
               </span>
             </div>
 
@@ -351,7 +351,7 @@ export default function HeroSection({ projectsCount = 28 }) {
                 <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#f59e0b' }} />
                 <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#10b981' }} />
                 <span style={{ marginLeft: '0.4rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-                  aditya-jamdade // solutions-hub
+                  nexvora-technologies // solutions-hub
                 </span>
               </div>
 

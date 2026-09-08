@@ -9,9 +9,9 @@ export function SiteProvider({ children }) {
   const [stats, setStats] = useState(null);
   const [loadingConfig, setLoadingConfig] = useState(true);
 
-  // Theme Management (Dark / Light White)
+  // Theme Management (Light by default for first-time visitors / Dark mode support)
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('portfolio_theme') || 'dark';
+    return localStorage.getItem('portfolio_theme') || 'light';
   });
 
   useEffect(() => {

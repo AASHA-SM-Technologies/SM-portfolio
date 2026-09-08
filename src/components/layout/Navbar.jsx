@@ -102,54 +102,47 @@ export default function Navbar() {
           transition: 'all 0.3s ease'
         }}
       >
-        {/* Left: Logo Badge Card with Sharp Border */}
+        {/* Left: Nexvora Brand Logo Badge */}
         <Link
           to="/"
           onClick={handleLogoClick}
-          title="Aditya Jamdade - Home"
+          title="Nexvora - Home"
           className="navbar-logo-badge"
           style={{
             textDecoration: 'none',
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '0.7rem',
+            justifyContent: 'center',
             background: 'var(--bg-card-solid)',
             border: '1px solid var(--border-card-sharp)',
             borderRadius: '12px',
-            padding: '0.45rem 1.05rem',
+            padding: '0.35rem 0.85rem',
             cursor: 'pointer',
             userSelect: 'none',
-            transition: 'transform 0.2s ease'
+            transition: 'all 0.2s ease',
+            height: '46px'
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.02)';
+            e.currentTarget.style.borderColor = 'var(--accent-cyan)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.borderColor = 'var(--border-card-sharp)';
+          }}
         >
-          {/* Logo Mark */}
-          <div
-            className="navbar-logo-icon"
+          <img
+            src="/Nexvora_Logo_Transparent.png"
+            alt="Nexvora Logo"
             style={{
-              width: '30px',
-              height: '30px',
-              borderRadius: '8px',
-              background: 'var(--bg-section-alt)',
-              border: '1px solid var(--border-subtle)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'var(--accent-cyan)'
+              height: '32px',
+              width: 'auto',
+              maxHeight: '34px',
+              maxWidth: '140px',
+              objectFit: 'contain',
+              display: 'block'
             }}
-          >
-            <Code2 size={17} />
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.18 }}>
-            <span className="logo-title" style={{ fontSize: '0.92rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
-              {siteConfig?.name ? siteConfig.name.toUpperCase() : 'ADITYA JAMDADE'}
-            </span>
-            <span className="logo-subtitle" style={{ fontSize: '0.6rem', fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              TECHNOLOGIES
-            </span>
-          </div>
+          />
         </Link>
 
         {/* Center: Desktop Navigation Links (Theme-Aware Typography) */}

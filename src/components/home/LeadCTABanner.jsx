@@ -13,7 +13,7 @@ export default function LeadCTABanner() {
   const { openInquiryModal, siteConfig } = useSite();
 
   const whatsappClean = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
-  const whatsappUrl = `https://wa.me/${whatsappClean}?text=${encodeURIComponent("Hello Aditya, I'm reaching out from your portfolio to discuss a new software & web project for my business.")}`;
+  const whatsappUrl = `https://wa.me/${whatsappClean}?text=${encodeURIComponent("Hello Nexvora Technologies, I'm reaching out from your website to discuss a new software & web project for my business.")}`;
 
   return (
     <section style={{ padding: '3.5rem 0', position: 'relative' }}>

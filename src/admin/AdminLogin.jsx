@@ -97,7 +97,7 @@ export default function AdminLogin() {
         background: 'var(--bg-main)'
       }}
     >
-      <SEO title="Admin CMS Login" description="Secure administrator portal for Aditya Jamdade's portfolio CMS." />
+      <SEO title="Admin CMS Login" description="Secure administrator portal for Nexvora Technologies CMS." />
 
       <div
         className="glass-card admin-login-card"
@@ -111,30 +111,35 @@ export default function AdminLogin() {
           boxShadow: 'var(--shadow-lg)'
         }}
       >
-        {/* Card Header & Brand Icon */}
+        {/* Card Header & Brand Logo */}
         <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
           <div
             onClick={handleShieldClick}
             title="Secure CMS Access (Tap 5x for Setup)"
-            className="admin-shield-icon"
+            className="admin-logo-wrapper"
             style={{
-              width: '56px',
-              height: '56px',
-              borderRadius: '14px',
-              background: 'var(--bg-section-alt)',
-              border: '1px solid var(--border-subtle)',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 1.15rem',
-              color: 'var(--accent-cyan)',
-              boxShadow: 'var(--shadow-sm)',
               cursor: 'pointer',
               userSelect: 'none',
-              transition: 'all 0.2s ease'
+              transition: 'transform 0.2s ease'
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
-            <Shield size={28} />
+            <img
+              src="/Nexvora_Logo_Transparent.png"
+              alt="Nexvora"
+              style={{
+                height: '38px',
+                width: 'auto',
+                maxWidth: '170px',
+                objectFit: 'contain',
+                display: 'block'
+              }}
+            />
           </div>
 
           <div
@@ -215,7 +220,7 @@ export default function AdminLogin() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@adityajamdade.com"
+                placeholder="admin@nexvora.com"
                 className="input-custom"
                 style={{ padding: '0.75rem 0.95rem', fontSize: '0.9rem', width: '100%' }}
                 required

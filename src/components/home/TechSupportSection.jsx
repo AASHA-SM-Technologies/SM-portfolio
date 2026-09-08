@@ -123,7 +123,7 @@ export default function TechSupportSection() {
             </button>
 
             <a
-              href={`https://wa.me/${siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301'}?text=${encodeURIComponent("Hello Aditya, I have an urgent technical support & troubleshooting requirement for my project.")}`}
+              href={`https://wa.me/${siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301'}?text=${encodeURIComponent("Hello Nexvora Technologies, I have an urgent technical support & troubleshooting requirement for my project.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"

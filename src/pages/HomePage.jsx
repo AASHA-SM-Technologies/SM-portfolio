@@ -19,8 +19,8 @@ export default function HomePage() {
   return (
     <div>
       <SEO
-        title="Aditya Jamdade | Full-Stack Developer & Digital Solutions Specialist"
-        description="I build websites, custom software, web applications, Razorpay payment flows, WhatsApp Cloud APIs, AI automations, and digital solutions for modern businesses."
+        title="Nexvora Technologies | Full-Stack Software & Digital Solutions"
+        description="Nexvora Technologies engineers custom websites, enterprise software, web applications, Razorpay payment flows, WhatsApp Cloud APIs, and AI automations for modern businesses."
       />
 
       <HeroSection />

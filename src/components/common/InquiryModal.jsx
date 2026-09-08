@@ -159,7 +159,7 @@ export default function InquiryModal() {
       ? selectedRequirements.join(', ')
       : 'a digital solution / project';
     const text = encodeURIComponent(
-      `Hello Aditya, I'm reaching out from your portfolio to discuss ${reqText} for my business.`
+      `Hello Nexvora Technologies, I'm reaching out to discuss ${reqText} for my business.`
     );
     return `https://wa.me/${phone}?text=${text}`;
   };

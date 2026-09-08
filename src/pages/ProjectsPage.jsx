@@ -120,7 +120,7 @@ export default function ProjectsPage() {
     <div style={{ paddingTop: '3rem', paddingBottom: '6rem' }}>
       <SEO
         title="Project Showcase & Case Studies"
-        description="Explore technical case studies of custom business software, websites, Razorpay payment integrations, WhatsApp APIs, and AI automations built by Aditya Jamdade."
+        description="Explore technical case studies of custom business software, websites, Razorpay payment integrations, WhatsApp APIs, and AI automations engineered by Nexvora Technologies."
       />
 
       <div className="container-custom">

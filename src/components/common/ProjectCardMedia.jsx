@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FolderGit2 } from 'lucide-react';
 
 export default function ProjectCardMedia({
   images = [],
@@ -46,15 +47,40 @@ export default function ProjectCardMedia({
             style={{
               width: '100%',
               height: '100%',
-              background: 'linear-gradient(135deg, rgba(0, 196, 214, 0.1) 0%, rgba(59, 130, 246, 0.15) 100%)',
+              background: 'linear-gradient(135deg, rgba(0, 196, 214, 0.08) 0%, rgba(59, 130, 246, 0.12) 50%, rgba(139, 92, 246, 0.08) 100%)',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'var(--text-dim)',
-              fontSize: '0.82rem'
+              padding: '1.5rem',
+              textAlign: 'center',
+              position: 'relative',
+              borderBottom: '1px solid var(--border-subtle)'
             }}
           >
-            No Preview Available
+            <div
+              style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '12px',
+                background: 'var(--bg-card-solid)',
+                border: '1px solid var(--border-glow)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--accent-cyan)',
+                marginBottom: '0.65rem',
+                boxShadow: '0 4px 14px rgba(0, 196, 214, 0.15)'
+              }}
+            >
+              <FolderGit2 size={22} />
+            </div>
+            <span style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-main)', letterSpacing: '-0.01em', maxWidth: '85%', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {title || 'Case Study Showcase'}
+            </span>
+            <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.2rem', fontWeight: 500 }}>
+              Live Production System
+            </span>
           </div>
         ) : (
           mediaList.map((imgSrc, idx) => (

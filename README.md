@@ -1,16 +1,34 @@
-# React + Vite
+# Nexvora Technologies
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Nexvora Technologies** is a modern Full-Stack Software & Digital Solutions Platform built with React 19, Vite, and Firebase.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dual-Theme Design System**: Clean modern Light Theme by default with full Obsidian Dark Mode toggle support.
+- **Enterprise Case Studies Showcase**: High-impact portfolio featuring AI automations, Razorpay payment solutions, custom ERP software, and GMB growth strategies.
+- **Full Admin CMS & Inquiries CRM**: In-app administrative dashboard to manage projects, services, skills, testimonials, and leads with 1-click WhatsApp follow-ups.
+- **Client-Side Media Compression**: Zero-dependency image and video compression with dynamic anti-theft watermarking.
+- **Production SPA Routing**: Seamless routing with `vercel.json` rewrites and `.htaccess` fallbacks to prevent 404s on page refresh.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, React Router DOM v7, Vite 8, Lucide React
+- **Styling**: Vanilla CSS, Modern CSS Custom Properties
+- **Backend & Database**: Firebase Authentication & Cloud Firestore
+- **Deployment**: Vercel Ready
 
-## Expanding the Oxlint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start local development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 📄 License
+Private repository © 2026 Nexvora Technologies. All rights reserved.
