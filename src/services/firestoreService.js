@@ -37,24 +37,24 @@ export const PORTFOLIO_CATEGORIES = [
 // SITE SETTINGS SERVICE
 // -------------------------------------------------------------
 const DEFAULT_SITE_CONFIG = {
-  name: "Nexvora Technologies",
+  name: "AASHA-SM Technologies Pvt Ltd",
   title: "Software & Digital Solutions Studio",
   tagline: "Websites • Software • Applications • APIs • Payments • AI Automation • Digital Solutions",
-  bio: "At Nexvora Technologies, we design, engineer, deploy, and scale high-performance digital solutions for modern businesses. From modern conversion-focused websites and bespoke ERP software to AI automations, Razorpay payment pipelines, WhatsApp Cloud APIs, and reliable technical infrastructure.",
-  email: "adityajamdade2124@gmail.com",
-  phone: "+91 90224 10301",
-  whatsapp: "+91 90224 10301",
+  bio: "At AASHA-SM Technologies Pvt Ltd, we design, engineer, deploy, and scale high-performance digital solutions for modern businesses. From modern conversion-focused websites and bespoke ERP software to AI automations, Razorpay payment pipelines, WhatsApp Cloud APIs, and reliable technical infrastructure.",
+  email: "adminsmtechsolution@gmail.com",
+  phone: "+91 95299 98320",
+  whatsapp: "+91 95299 98320",
   location: "Sangli / Pune / Mumbai, India (Serving Clients Globally)",
   profileImage: "",
   resumeUrl: "#",
   linkedinUrl: "https://linkedin.com",
   githubUrl: "https://github.com",
   calendlyUrl: "https://cal.com",
-  seoTitle: "Nexvora Technologies | Full-Stack Software & Digital Solutions",
-  seoDescription: "Nexvora Technologies is a premier software development studio delivering custom websites, web applications, Razorpay payment integrations, WhatsApp APIs, AI automations & technical support.",
+  seoTitle: "AASHA-SM Technologies Pvt Ltd | Full-Stack Software & Digital Solutions",
+  seoDescription: "AASHA-SM Technologies Pvt Ltd is a premier software development studio delivering custom websites, web applications, Razorpay payment integrations, WhatsApp APIs, AI automations & technical support.",
   watermark: {
     enabled: true,
-    text: "Nexvora Technologies",
+    text: "AASHA-SM Technologies Pvt Ltd",
     position: "bottom-right",
     opacity: 0.25,
     fontSize: 16
@@ -585,9 +585,9 @@ export async function createInquiry(inquiryData) {
   // 1. Save to Firestore for Admin Panel CRM
   const docRef = await addDoc(colRef, payload);
 
-  // 2. Email Forwarding via FormSubmit API to adityajamdade2124@gmail.com
+  // 2. Email Forwarding via FormSubmit API to adminsmtechsolution@gmail.com
   try {
-    fetch('https://formsubmit.co/ajax/adityajamdade2124@gmail.com', {
+    fetch('https://formsubmit.co/ajax/adminsmtechsolution@gmail.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1064,7 +1064,7 @@ export async function seedDefaultPortfolioData() {
       clientName: "Rajesh Kulkarni",
       businessName: "Kulkarni Diagnostics & Health",
       designation: "Managing Director",
-      message: "Nexvora Technologies completely transformed our online presence and local Google ranking. Our patient inquiries on WhatsApp increased three-fold within weeks. They handle everything from development to technical support seamlessly.",
+      message: "AASHA-SM Technologies Pvt Ltd completely transformed our online presence and local Google ranking. Our patient inquiries on WhatsApp increased three-fold within weeks. They handle everything from development to technical support seamlessly.",
       rating: 5,
       sortOrder: 1,
       published: true
@@ -1073,7 +1073,7 @@ export async function seedDefaultPortfolioData() {
       clientName: "Vikram Mehta",
       businessName: "Apex Retail Solutions",
       designation: "Founder & CEO",
-      message: "The Razorpay integration and automated WhatsApp order alerts Nexvora Technologies built for us worked flawlessly from day one. They are not just developers, but true technical partners who understand business goals.",
+      message: "The Razorpay integration and automated WhatsApp order alerts AASHA-SM Technologies Pvt Ltd built for us worked flawlessly from day one. They are not just developers, but true technical partners who understand business goals.",
       rating: 5,
       sortOrder: 2,
       published: true
@@ -1082,7 +1082,7 @@ export async function seedDefaultPortfolioData() {
       clientName: "Pooja Sharma",
       businessName: "Zenith Properties",
       designation: "Head of Digital Marketing",
-      message: "Our luxury property website loads in under a second and generates high-ticket buyer leads every single day. Nexvora Technologies' attention to speed, clean UI, and lead capture is truly exceptional.",
+      message: "Our luxury property website loads in under a second and generates high-ticket buyer leads every single day. AASHA-SM Technologies Pvt Ltd's attention to speed, clean UI, and lead capture is truly exceptional.",
       rating: 5,
       sortOrder: 3,
       published: true

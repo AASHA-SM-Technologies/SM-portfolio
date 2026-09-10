@@ -58,9 +58,9 @@ export default function HeroSection({ projectsCount = 28 }) {
   }, [targetProjects, targetWebsites, targetBusinesses, targetTechnologies]);
 
   const directWhatsAppUrl = () => {
-    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
+    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919529998320';
     const text = encodeURIComponent(
-      "Hello Nexvora Technologies, I'm reaching out from your website to discuss a digital project for my business."
+      "Hello AASHA-SM Technologies Pvt Ltd, I'm reaching out from your website to discuss a digital project for my business."
     );
     return `https://wa.me/${phone}?text=${text}`;
   };
@@ -174,7 +174,7 @@ export default function HeroSection({ projectsCount = 28 }) {
                   color: 'var(--accent-cyan)'
                 }}
               >
-                NEXVORA TECHNOLOGIES • DIGITAL SOLUTIONS STUDIO
+                AASHA-SM TECHNOLOGIES PVT LTD • DIGITAL SOLUTIONS STUDIO
               </span>
             </div>
 
@@ -351,7 +351,7 @@ export default function HeroSection({ projectsCount = 28 }) {
                 <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#f59e0b' }} />
                 <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#10b981' }} />
                 <span style={{ marginLeft: '0.4rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-                  nexvora-technologies // solutions-hub
+                  aasha-sm-technologies // solutions-hub
                 </span>
               </div>
 

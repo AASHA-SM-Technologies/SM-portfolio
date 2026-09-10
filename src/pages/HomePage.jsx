@@ -19,8 +19,8 @@ export default function HomePage() {
   return (
     <div>
       <SEO
-        title="Nexvora Technologies | Full-Stack Software & Digital Solutions"
-        description="Nexvora Technologies engineers custom websites, enterprise software, web applications, Razorpay payment flows, WhatsApp Cloud APIs, and AI automations for modern businesses."
+        title="AASHA-SM Technologies Pvt Ltd | Full-Stack Software & Digital Solutions"
+        description="AASHA-SM Technologies Pvt Ltd engineers custom websites, enterprise software, web applications, Razorpay payment flows, WhatsApp Cloud APIs, and AI automations for modern businesses."
       />
 
       <HeroSection />

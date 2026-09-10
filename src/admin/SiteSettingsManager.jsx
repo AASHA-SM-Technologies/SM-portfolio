@@ -17,23 +17,23 @@ import {
 export default function SiteSettingsManager() {
   const { siteConfig, refreshSiteConfig, showToast } = useSite();
   const [formData, setFormData] = useState({
-    name: "Nexvora Technologies",
+    name: "AASHA-SM Technologies Pvt Ltd",
     title: "Software & Digital Solutions Studio",
     tagline: "Websites • Software • Applications • APIs • Payments • AI Automation • Digital Solutions",
-    bio: "At Nexvora Technologies, we engineer high-performance websites, bespoke business software, scalable applications, Razorpay payment systems, WhatsApp API integrations, AI automations and custom digital solutions for businesses.",
-    email: "adityajamdade2124@gmail.com",
-    phone: "+91 90224 10301",
-    whatsapp: "+91 90224 10301",
+    bio: "At AASHA-SM Technologies Pvt Ltd, we engineer high-performance websites, bespoke business software, scalable applications, Razorpay payment systems, WhatsApp API integrations, AI automations and custom digital solutions for businesses.",
+    email: "adminsmtechsolution@gmail.com",
+    phone: "+91 95299 98320",
+    whatsapp: "+91 95299 98320",
     location: "Sangli / Pune / Mumbai, India (Serving Clients Globally)",
     resumeUrl: "#",
     linkedinUrl: "https://linkedin.com",
     githubUrl: "https://github.com",
     calendlyUrl: "https://cal.com",
-    seoTitle: "Nexvora Technologies | Full-Stack Software & Digital Solutions",
-    seoDescription: "Nexvora Technologies is a premier software development studio delivering custom websites, web applications, Razorpay payment integrations, WhatsApp APIs, AI automations & technical support.",
+    seoTitle: "AASHA-SM Technologies Pvt Ltd | Full-Stack Software & Digital Solutions",
+    seoDescription: "AASHA-SM Technologies Pvt Ltd is a premier software development studio delivering custom websites, web applications, Razorpay payment integrations, WhatsApp APIs, AI automations & technical support.",
     watermark: {
       enabled: true,
-      text: "Nexvora Technologies",
+      text: "AASHA-SM Technologies Pvt Ltd",
       position: "bottom-right",
       opacity: 0.25,
       fontSize: 14
@@ -317,7 +317,7 @@ export default function SiteSettingsManager() {
                 name="text"
                 value={formData.watermark?.text}
                 onChange={handleWatermarkChange}
-                placeholder="Nexvora Technologies"
+                placeholder="AASHA-SM Technologies Pvt Ltd"
                 className="input-custom"
               />
             </div>

@@ -95,7 +95,7 @@ export default function ProjectDetailPage() {
     if (navigator.share) {
       navigator.share({
         title: project?.title || 'Case Study',
-        text: project?.shortDescription || 'Check out this technical case study by Nexvora Technologies',
+        text: project?.shortDescription || 'Check out this technical case study by AASHA-SM Technologies Pvt Ltd',
         url: window.location.href
       }).catch(() => {});
     } else {
@@ -105,9 +105,9 @@ export default function ProjectDetailPage() {
   };
 
   const whatsappInquiryUrl = () => {
-    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
+    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919529998320';
     const text = encodeURIComponent(
-      `Hello Nexvora Technologies, I was reviewing your case study "${project?.title || 'Project'}" on your website and would like to discuss a similar solution for my business.`
+      `Hello AASHA-SM Technologies Pvt Ltd, I was reviewing your case study "${project?.title || 'Project'}" on your website and would like to discuss a similar solution for my business.`
     );
     return `https://wa.me/${phone}?text=${text}`;
   };
@@ -786,11 +786,11 @@ export default function ProjectDetailPage() {
               </div>
             )}
 
-            {/* Nexvora Engineering Scope */}
+            {/* AASHA-SM Technologies Engineering Scope */}
             {project.contribution && project.contribution.length > 0 && (
               <div className="glass-panel" style={{ padding: '2rem' }}>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Award size={18} color="#f59e0b" /> Nexvora Engineering Scope
+                  <Award size={18} color="#f59e0b" /> AASHA-SM Technologies Engineering Scope
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {project.contribution.map((item, idx) => (

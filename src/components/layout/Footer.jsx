@@ -34,8 +34,8 @@ export default function Footer() {
     }, 2000);
   };
 
-  const whatsappClean = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
-  const whatsappLink = `https://wa.me/${whatsappClean}?text=${encodeURIComponent("Hello Nexvora Technologies, I'm reaching out from your website to discuss a new digital solution for my business.")}`;
+  const whatsappClean = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919529998320';
+  const whatsappLink = `https://wa.me/${whatsappClean}?text=${encodeURIComponent("Hello AASHA-SM Technologies Pvt Ltd, I'm reaching out from your website to discuss a new digital solution for my business.")}`;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -73,7 +73,7 @@ export default function Footer() {
             <div className="footer-heading-col" style={{ flex: '0 0 auto' }}>
               <h2
                 onClick={handleSecretAdminTrigger}
-                title="Nexvora Technologies"
+                title="AASHA-SM Technologies Pvt Ltd"
                 style={{
                   fontSize: 'clamp(2.2rem, 3.6vw, 3.4rem)',
                   color: '#ffffff',
@@ -141,7 +141,7 @@ export default function Footer() {
                   Contact Us
                 </div>
                 <a
-                  href={`tel:${siteConfig?.whatsapp || '+919022410301'}`}
+                  href={`tel:${siteConfig?.whatsapp || '+919529998320'}`}
                   style={{
                     color: '#9ca3af',
                     textDecoration: 'none',
@@ -152,7 +152,7 @@ export default function Footer() {
                   onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
                   onMouseLeave={(e) => (e.target.style.color = '#9ca3af')}
                 >
-                  {siteConfig?.whatsapp || '+91 90224 10301'}
+                  {siteConfig?.whatsapp || '+91 95299 98320'}
                 </a>
               </div>
 
@@ -162,7 +162,7 @@ export default function Footer() {
                   New Business Inquiries
                 </div>
                 <a
-                  href={`mailto:${siteConfig?.email || 'adityajamdade2124@gmail.com'}`}
+                  href={`mailto:${siteConfig?.email || 'adminsmtechsolution@gmail.com'}`}
                   style={{
                     color: '#9ca3af',
                     textDecoration: 'none',
@@ -173,7 +173,7 @@ export default function Footer() {
                   onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
                   onMouseLeave={(e) => (e.target.style.color = '#9ca3af')}
                 >
-                  {siteConfig?.email || 'adityajamdade2124@gmail.com'}
+                  {siteConfig?.email || 'adminsmtechsolution@gmail.com'}
                 </a>
               </div>
             </div>
@@ -304,7 +304,7 @@ export default function Footer() {
           }}
         >
           <div>
-            © {currentYear} {siteConfig?.name || 'Nexvora Technologies'}. All rights reserved.
+            © {currentYear} {siteConfig?.name || 'AASHA-SM Technologies Pvt Ltd'}. All rights reserved.
           </div>
 
           <div className="footer-legal-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
@@ -387,7 +387,7 @@ export default function Footer() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat with Nexvora Technologies on WhatsApp"
+          aria-label="Chat with AASHA-SM Technologies Pvt Ltd on WhatsApp"
           className="floating-wa-button"
           style={{
             width: '54px',

@@ -1,6 +1,6 @@
-# Nexvora Technologies
+# AASHA-SM Technologies Pvt Ltd
 
-**Nexvora Technologies** is a modern Full-Stack Software & Digital Solutions Platform built with React 19, Vite, and Firebase.
+**AASHA-SM Technologies Pvt Ltd** is a modern Full-Stack Software & Digital Solutions Platform built with React 19, Vite, and Firebase.
 
 ## 🚀 Key Features
 
@@ -31,4 +31,4 @@ npm run build
 ```
 
 ## 📄 License
-Private repository © 2026 Nexvora Technologies. All rights reserved.
+Private repository © 2026 AASHA-SM Technologies Pvt Ltd. All rights reserved.

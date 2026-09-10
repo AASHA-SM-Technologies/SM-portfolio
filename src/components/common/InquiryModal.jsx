@@ -154,12 +154,12 @@ export default function InquiryModal() {
   };
 
   const directWhatsAppUrl = () => {
-    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
+    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919529998320';
     const reqText = selectedRequirements && selectedRequirements.length > 0
       ? selectedRequirements.join(', ')
       : 'a digital solution / project';
     const text = encodeURIComponent(
-      `Hello Nexvora Technologies, I'm reaching out to discuss ${reqText} for my business.`
+      `Hello AASHA-SM Technologies Pvt Ltd, I'm reaching out to discuss ${reqText} for my business.`
     );
     return `https://wa.me/${phone}?text=${text}`;
   };

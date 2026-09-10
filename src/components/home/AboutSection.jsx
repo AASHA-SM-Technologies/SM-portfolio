@@ -57,7 +57,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="about-desc" style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.65, marginBottom: '1.5rem' }}>
-              We are <strong style={{ color: 'var(--text-main)' }}>Nexvora Technologies</strong>, a premier full-stack engineering and digital solutions studio. We design, build, and deploy production-grade web platforms, bespoke business software, payment checkouts, and AI/WhatsApp automation infrastructure for ambitious businesses.
+              We are <strong style={{ color: 'var(--text-main)' }}>AASHA-SM Technologies Pvt Ltd</strong>, a premier full-stack engineering and digital solutions studio. We design, build, and deploy production-grade web platforms, bespoke business software, payment checkouts, and AI/WhatsApp automation infrastructure for ambitious businesses.
             </p>
 
             <div className="about-bullets-list" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>

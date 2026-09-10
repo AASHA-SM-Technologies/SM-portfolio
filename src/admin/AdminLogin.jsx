@@ -97,7 +97,7 @@ export default function AdminLogin() {
         background: 'var(--bg-main)'
       }}
     >
-      <SEO title="Admin CMS Login" description="Secure administrator portal for Nexvora Technologies CMS." />
+      <SEO title="Admin CMS Login" description="Secure administrator portal for AASHA-SM Technologies Pvt Ltd CMS." />
 
       <div
         className="glass-card admin-login-card"
@@ -130,12 +130,12 @@ export default function AdminLogin() {
             onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
             <img
-              src="/Nexvora_Logo_Transparent.png"
-              alt="Nexvora"
+              src="/Asha%20SM%20Technologies.png"
+              alt="Asha SM Technologies"
               style={{
                 height: '38px',
                 width: 'auto',
-                maxWidth: '170px',
+                maxWidth: '180px',
                 objectFit: 'contain',
                 display: 'block'
               }}
@@ -220,7 +220,7 @@ export default function AdminLogin() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@nexvora.com"
+                placeholder="adminsmtechsolution@gmail.com"
                 className="input-custom"
                 style={{ padding: '0.75rem 0.95rem', fontSize: '0.9rem', width: '100%' }}
                 required

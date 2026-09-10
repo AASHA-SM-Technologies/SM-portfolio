@@ -78,7 +78,7 @@ export default function DashboardOverview() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
-            Welcome to Nexvora CMS
+            Welcome to AASHA-SM Technologies CMS
           </h1>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Here is a live summary of your projects, lead generation inquiries, and digital solution stats.

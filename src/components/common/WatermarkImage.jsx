@@ -17,7 +17,7 @@ export default function WatermarkImage({
   const { siteConfig } = useSite();
   const watermarkConfig = siteConfig?.watermark || {
     enabled: true,
-    text: 'Nexvora Technologies',
+    text: 'AASHA-SM Technologies Pvt Ltd',
     position: 'bottom-right',
     opacity: 0.3,
     fontSize: 13
@@ -170,7 +170,7 @@ export default function WatermarkImage({
             ...getPositionStyles(watermarkConfig.position)
           }}
         >
-          {watermarkConfig.text || 'Nexvora Technologies'}
+          {watermarkConfig.text || 'AASHA-SM Technologies Pvt Ltd'}
         </div>
       )}
 

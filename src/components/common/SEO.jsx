@@ -5,10 +5,10 @@ export default function SEO({ title, description, image, url }) {
   const { siteConfig } = useSite();
 
   const siteTitle = title 
-    ? `${title} | ${siteConfig?.name || 'Nexvora Technologies'}`
-    : siteConfig?.seoTitle || "Nexvora Technologies | Full-Stack Software & Digital Solutions";
+    ? `${title} | ${siteConfig?.name || 'AASHA-SM Technologies Pvt Ltd'}`
+    : siteConfig?.seoTitle || "AASHA-SM Technologies Pvt Ltd | Full-Stack Software & Digital Solutions";
   
-  const siteDesc = description || siteConfig?.seoDescription || "Nexvora Technologies is a premier software development studio building high-performance websites, web applications, Razorpay payment flows, WhatsApp APIs, and AI automations.";
+  const siteDesc = description || siteConfig?.seoDescription || "AASHA-SM Technologies Pvt Ltd is a premier software development studio building high-performance websites, web applications, Razorpay payment flows, WhatsApp APIs, and AI automations.";
 
   useEffect(() => {
     document.title = siteTitle;

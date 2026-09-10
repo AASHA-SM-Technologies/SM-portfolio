@@ -151,12 +151,12 @@ export default function ContactPage() {
   };
 
   const directWhatsAppUrl = () => {
-    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919022410301';
+    const phone = siteConfig?.whatsapp?.replace(/[^0-9]/g, '') || '919529998320';
     const reqText = selectedRequirements && selectedRequirements.length > 0
       ? selectedRequirements.join(', ')
       : 'a digital solution / project';
     const text = encodeURIComponent(
-      `Hello Nexvora Technologies, I'm reaching out to discuss ${reqText} for my business.`
+      `Hello AASHA-SM Technologies Pvt Ltd, I'm reaching out to discuss ${reqText} for my business.`
     );
     return `https://wa.me/${phone}?text=${text}`;
   };
@@ -165,7 +165,7 @@ export default function ContactPage() {
     <div className="contact-page-wrapper" style={{ paddingTop: '3rem', paddingBottom: '6rem' }}>
       <SEO
         title="Contact & Project Consultation"
-        description="Submit your digital solution requirement or book a technical consultation with Nexvora Technologies for websites, business software, payments, and AI automations."
+        description="Submit your digital solution requirement or book a technical consultation with AASHA-SM Technologies Pvt Ltd for websites, business software, payments, and AI automations."
       />
 
       <div className="container-custom">
@@ -273,14 +273,14 @@ export default function ContactPage() {
                       Instant Messaging
                     </div>
                     <div className="contact-item-val" style={{ color: 'var(--text-main)', fontWeight: 700, fontSize: '0.95rem' }}>
-                      {siteConfig?.whatsapp || '+91 90224 10301'}
+                      {siteConfig?.whatsapp || '+91 95299 98320'}
                     </div>
                   </div>
                 </a>
 
                 {/* Email Card */}
                 <a
-                  href={`mailto:${siteConfig?.email || 'adityajamdade2124@gmail.com'}`}
+                  href={`mailto:${siteConfig?.email || 'adminsmtechsolution@gmail.com'}`}
                   className="glass-panel contact-channel-item"
                   style={{
                     padding: '0.9rem 1.1rem',
@@ -303,7 +303,7 @@ export default function ContactPage() {
                       Email Inquiries
                     </div>
                     <div className="contact-item-val" style={{ color: 'var(--text-main)', fontWeight: 700, fontSize: '0.95rem', wordBreak: 'break-all' }}>
-                      {siteConfig?.email || 'adityajamdade2124@gmail.com'}
+                      {siteConfig?.email || 'adminsmtechsolution@gmail.com'}
                     </div>
                   </div>
                 </a>

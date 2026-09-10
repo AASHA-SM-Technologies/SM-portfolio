@@ -102,11 +102,11 @@ export default function Navbar() {
           transition: 'all 0.3s ease'
         }}
       >
-        {/* Left: Nexvora Brand Logo Badge */}
+        {/* Left: AASHA-SM Technologies Pvt Ltd Brand Logo Badge */}
         <Link
           to="/"
           onClick={handleLogoClick}
-          title="Nexvora - Home"
+          title="AASHA-SM Technologies Pvt Ltd - Home"
           className="navbar-logo-badge"
           style={{
             textDecoration: 'none',
@@ -132,13 +132,13 @@ export default function Navbar() {
           }}
         >
           <img
-            src="/Nexvora_Logo_Transparent.png"
-            alt="Nexvora Logo"
+            src="/Asha%20SM%20Technologies.png"
+            alt="Asha SM Technologies Logo"
             style={{
               height: '32px',
               width: 'auto',
               maxHeight: '34px',
-              maxWidth: '140px',
+              maxWidth: '150px',
               objectFit: 'contain',
               display: 'block'
             }}

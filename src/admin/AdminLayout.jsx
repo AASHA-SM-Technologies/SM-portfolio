@@ -85,12 +85,12 @@ export default function AdminLayout() {
           {/* Brand Header */}
           <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <img
-              src="/Nexvora_Logo_Transparent.png"
-              alt="Nexvora Logo"
+              src="/Asha%20SM%20Technologies.png"
+              alt="Asha SM Technologies Logo"
               style={{
                 height: '28px',
                 width: 'auto',
-                maxWidth: '135px',
+                maxWidth: '150px',
                 objectFit: 'contain'
               }}
             />
@@ -148,7 +148,7 @@ export default function AdminLayout() {
             </div>
             <div style={{ overflow: 'hidden' }}>
               <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                {currentUser?.displayName || 'Nexvora Admin'}
+                {currentUser?.displayName || 'AASHA-SM Admin'}
               </div>
               <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                 {currentUser?.email}
