@@ -49,7 +49,7 @@ export default function Footer() {
         color: '#9ca3af',
         borderTop: '1px solid rgba(255, 255, 255, 0.08)',
         paddingTop: '5rem',
-        paddingBottom: '2.5rem',
+        paddingBottom: '3.5rem',
         position: 'relative',
         fontFamily: 'var(--font-sans)'
       }}
@@ -300,33 +300,36 @@ export default function Footer() {
             flexWrap: 'wrap',
             gap: '1.25rem',
             fontSize: '0.85rem',
-            color: '#6b7280'
+            color: '#6b7280',
+            paddingRight: '250px'
           }}
         >
           <div>
             © {currentYear} {siteConfig?.name || 'AASHA-SM Technologies Pvt Ltd'}. All rights reserved.
           </div>
 
-          <div className="footer-legal-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+          <div className="footer-legal-links" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
             <Link
-              to="/contact"
-              style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.2s' }}
+              to="/terms-and-conditions"
+              style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.2s', whiteSpace: 'nowrap' }}
               onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
               onMouseLeave={(e) => (e.target.style.color = '#9ca3af')}
             >
-              Privacy Notice
+              Terms & Conditions
             </Link>
+            <span style={{ color: 'rgba(255, 255, 255, 0.18)', userSelect: 'none' }} aria-hidden="true">•</span>
             <Link
-              to="/contact"
-              style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.2s' }}
+              to="/privacy-policy"
+              style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.2s', whiteSpace: 'nowrap' }}
               onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
               onMouseLeave={(e) => (e.target.style.color = '#9ca3af')}
             >
-              Terms of Use
+              Privacy Policy
             </Link>
+            <span style={{ color: 'rgba(255, 255, 255, 0.18)', userSelect: 'none' }} aria-hidden="true">•</span>
             <Link
-              to="/contact"
-              style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.2s' }}
+              to="/privacy-policy#cookies"
+              style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.2s', whiteSpace: 'nowrap' }}
               onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
               onMouseLeave={(e) => (e.target.style.color = '#9ca3af')}
             >
@@ -356,28 +359,35 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="floating-wa-pill"
           style={{
-            background: 'var(--bg-card-solid)',
-            border: '1px solid var(--border-card-sharp)',
-            color: 'var(--text-main)',
+            background: '#161616',
+            border: '1px solid rgba(255, 255, 255, 0.14)',
+            color: '#f8fafc',
             padding: '0.45rem 0.85rem',
             borderRadius: '12px',
             textDecoration: 'none',
-            boxShadow: 'var(--shadow-md)',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
             lineHeight: 1.25,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
             gap: '2px',
-            transition: 'transform 0.2s ease'
+            transition: 'transform 0.2s ease, border-color 0.2s ease',
+            whiteSpace: 'nowrap'
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.04)';
+            e.currentTarget.style.borderColor = 'rgba(37, 211, 102, 0.5)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.14)';
+          }}
         >
           <span style={{ color: '#10b981', fontSize: '0.68rem', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '4px', letterSpacing: '0.02em' }}>
             <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981', display: 'inline-block', boxShadow: '0 0 6px #10b981' }} />
             Online Now
           </span>
-          <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--text-main)' }}>
+          <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#ffffff' }}>
             Chat on WhatsApp
           </span>
         </a>
@@ -402,7 +412,8 @@ export default function Footer() {
             boxShadow: '0 8px 24px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25)',
             border: '2px solid rgba(255, 255, 255, 0.3)',
             transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-            position: 'relative'
+            position: 'relative',
+            flexShrink: 0
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.08) translateY(-2px)';
@@ -434,13 +445,16 @@ export default function Footer() {
           .footer-scroll-top-col {
             display: block !important;
           }
+          .footer-bottom-bar {
+            padding-right: 250px !important;
+          }
         }
 
         /* Mobile Layout Rules - Polished, Balanced & Structured */
         @media (max-width: 768px) {
           .site-footer {
             padding-top: 3rem !important;
-            padding-bottom: 2rem !important;
+            padding-bottom: 5.5rem !important;
           }
           .footer-container {
             padding: 0 1.15rem !important;
@@ -528,6 +542,7 @@ export default function Footer() {
             align-items: flex-start !important;
             gap: 0.85rem !important;
             font-size: 0.8rem !important;
+            padding-right: 0 !important;
           }
           .footer-legal-links {
             gap: 1rem !important;
